@@ -3,13 +3,13 @@ import java.sql.SQLException;
 public class Main {
 
     public static void main(String[] args) throws SQLException {
-        Book book = new Book("a","b",3);
 
-        BookDao employeeDao = new BookDao();
-        employeeDao.save(book);
+        BookDao bookDao = new BookDao();
+        DbInit dbInit = new DbInit();
+        dbInit.addBooks();
 
-        System.out.println(employeeDao.read(1));
-
+        Menu menu = new Menu();
+        menu.menu(bookDao);
     }
 
 }
